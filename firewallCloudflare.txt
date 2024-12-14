@@ -1,0 +1,366 @@
+
+(ip.src in {::/0}) or (not ssl) or (not http.request.version in {"HTTP/2" "HTTP/3" "SPDY/3.1"})
+ - legacy captcha + js challenge
+
+(http.user_agent contains "Google") or (http.user_agent contains "Yandex") - skip
+
+!SSL/TLS - Edge Certificates - Always Use HTTPS
+
+(ip.geoip.asnum eq asnum) or (ip.geoip.asnum eq asnum) or (ip.geoip.asnum eq asnum) or (http.request.uri contains "/wp-cron.php" (если есть php)) - skip
+
+(ip.geoip.country eq "CN") or (ip.geoip.country eq "UA") or (ip.geoip.country eq "IR") or (ip.geoip.country eq "IN") or (ip.geoip.continent eq "AF") or (ip.geoip.country eq "SG") or (ip.geoip.country eq "GB") or (ip.geoip.country eq "PL") or (ip.geoip.country eq "ID") or (ip.geoip.country eq "TH") or (ip.geoip.country eq "HK") or (ip.geoip.country eq "CH") or (ip.geoip.country eq "BG") or (ip.geoip.country eq "CZ") or (ip.geoip.country eq "SC") or (ip.geoip.country eq "CA") or (http.user_agent contains "ahrefs.com") or (http.user_agent contains "Abonti") or (http.user_agent contains "AspiegelBot") or (http.user_agent contains "aggregator") or (http.user_agent contains "AhrefsBot") or (http.user_agent contains "Aport") or (http.user_agent contains "asterias") or (http.user_agent contains "Baiduspider") or (http.user_agent contains "BDCbot") or (http.user_agent contains "bidswitchbot") or (http.user_agent contains "Birubot") or (http.user_agent contains "BLEXBot") or (http.user_agent contains "BUbiNG") or (http.user_agent contains "BuiltBotTough") or (http.user_agent contains "Bullseye") or (http.user_agent contains "BunnySlippers") or (http.user_agent contains "Butterfly") or (http.user_agent contains "ca-crawler") or (http.user_agent contains "CamontSpider") or (http.user_agent contains "CCBot") or (http.user_agent contains "Cegbfeieh") or (http.user_agent contains "CheeseBot") or (http.user_agent contains "CherryPicker") or (http.user_agent contains "coccoc") or (http.user_agent contains "CopyRightCheck") or (http.user_agent contains "cosmos") or (http.user_agent contains "crawler") - block
+
+(http.user_agent contains "Crescent") or (http.user_agent contains "CyotekWebCopy/1.7") or (http.user_agent contains "CyotekHTTP/2.0") or (http.user_agent contains "DataForSeoBot") or (http.user_agent contains "DeuSu") or (http.user_agent contains "discobot") or (http.user_agent contains "DittoSpyder") or (http.user_agent contains "DnyzBot") or (http.user_agent contains "DomainCrawler") or (http.user_agent contains "DotBot") or (http.user_agent contains "Download Ninja") or (http.user_agent contains "EasouSpider") or (http.user_agent contains "EmailCollector") or (http.user_agent contains "EmailSiphon") or (http.user_agent contains "EmailWolf") or (http.user_agent contains "EroCrawler") or (http.user_agent contains "Exabot") or (http.user_agent contains "ExtractorPro") or (http.user_agent contains "Ezooms") or (http.user_agent contains "FairShare") or (http.user_agent contains "Fasterfox") or (http.user_agent contains "FeedBooster") or (http.user_agent contains "Foobot") or (http.user_agent contains "Genieo") or (http.user_agent contains "GetIntent Crawler") or (http.user_agent contains "Gigabot") or (http.user_agent contains "gold crawler") or (http.user_agent contains "GrapeshotCrawler") or (http.user_agent contains "grub-client") or (http.user_agent contains "Harvest") or (http.user_agent contains "hloader") or (http.user_agent contains "httplib") or (http.user_agent contains "HTTrack") or (http.user_agent contains "humanlinks") or (http.user_agent contains "HybridBot") or (http.user_agent contains "ia_archiver") or (http.user_agent contains "ieautodiscovery") or (http.user_agent contains "Incutio") or (http.user_agent contains "InfoNaviRobot") or (http.user_agent contains "InternetSeer") or (http.user_agent contains "IstellaBot") or (http.user_agent contains "Java") or (http.user_agent contains "Java/1.") or (http.user_agent contains "JamesBOT") or (http.user_agent contains "JennyBot") or (http.user_agent contains "JS-Kit") or (http.user_agent contains "k2spider") or (http.user_agent contains "Kenjin Spider") or (http.user_agent contains "Keyword Density/0.9") or (http.user_agent contains "kmSearchBot") or (http.user_agent contains "larbin") or (http.user_agent contains "LexiBot") or (http.user_agent contains "libWeb") or (http.user_agent contains "libwww") or (http.user_agent contains "Linguee") or (http.user_agent contains "LinkExchanger") or (http.user_agent contains "LinkextractorPro") or (http.user_agent contains "linko") or (http.user_agent contains "LinkScan/8.1a Unix") or (http.user_agent contains "LinkWalker") or (http.user_agent contains "LinkpadBot") or (http.user_agent contains "lmspider") or (http.user_agent contains "LNSpiderguy") or (http.user_agent contains "ltx71") or (http.user_agent contains "lwp-trivial") or (http.user_agent contains "lwp-trivial") or (http.user_agent contains "magpie") or (http.user_agent contains "Mata Hari") or (http.user_agent contains "MaxPointCrawler") or (http.user_agent contains "MegaIndex")
+ - block
+(http.request.uri.query contains ")/*") or (http.request.uri.query contains ")--") or (http.request.uri.query contains "benchmark(") or (http.request.uri.query contains "'0:0:20'") or (http.request.uri.query contains "MD5(") or (http.request.uri.query contains "%20waitfor%20delay%20") or (http.request.uri.query contains "%22") or (http.request.uri.query contains "%20/*") or (http.request.uri.query contains "%20--") or (http.request.uri.query contains "%20%23") or (http.request.uri.query contains ")%23") or (http.request.uri.query contains "script>") or (http.request.uri.query contains "%40") or (http.request.uri.query contains "%00") or (http.request.uri.query contains "<?php") or (http.request.uri.query contains "0x00") or (http.request.uri.query contains "0x08") or (http.request.uri.query contains "0x09") or (http.request.uri.query contains "0x0a") or (http.request.uri.query contains "0x0d") or (http.request.uri.query contains "0x1a") or (http.request.uri.query contains "0x22") or (http.request.uri.query contains "0x25") or (http.request.uri.query contains "0x27") or (http.request.uri.query contains "0x5c") or (http.request.uri.query contains "0x5f") or (http.request.uri.query contains "SELECT") or (http.request.uri.query contains "concat") or (http.request.uri.query contains "union") or (http.request.uri.query contains "0x50") or (http.request.uri.query contains "DROP") or (http.request.uri.query contains "WHERE") or (http.request.uri.query contains "ONION") or (http.request.uri.query contains "0x3c62723e3c62723e3c62723e") or (http.request.uri.query contains "0x3c696d67207372633d22") or (http.request.uri.query contains "OR") or (http.request.uri.query contains "0x3e") or (http.request.uri.query contains "<img") or (http.request.uri.query contains "<image") or (http.request.uri.query contains "document.cookie") or (http.request.uri.query contains "onerror()") or (http.request.uri.query contains "alert(") or (http.request.uri.query contains "window.") or (http.request.uri.query contains "String.fromCharCode(") or (http.request.uri.query contains "javascript:") or (http.request.uri.query contains "onmouseover=") or (http.request.uri.query contains "<BODY onload") or (http.request.uri.query contains "<style") or (http.request.uri.query contains "svg onload") - block
+(http.request.version in {"HTTP/1.1" "HTTP/1.2"} and not http.request.version in {"HTTP/2" "HTTP/3" "SPDY/3.1"} and not ip.geoip.asnum in {13238 15169 8075 47541 32934} and not cf.client.bot) or (cf.threat_score ge 10 and not cf.client.bot) or (not ssl) or (ip.geoip.continent in {"AF" "AS" "AN" "EU" "NA" "OC" "SA"} and not ip.geoip.country in {"RU" "MD" "BY" "UA" "GB" "US" "FR" "ES" "IT" "CA" "DE" "SE" "FI" "BE" "NL"} and not ip.geoip.asnum in {13238 15169 8075 47541 32934} and not cf.client.bot) or (http.referer eq "" and not cf.client.bot) - block
+
+(http.request.version in {"HTTP/1.0"} and not cf.client.bot) or (http.user_agent eq "") or (http.user_agent eq " ") or (http.user_agent eq "-") or (http.user_agent eq "'") or (http.user_agent contains "/x/") or (http.user_agent contains "'XOR(") or (http.user_agent contains "ALittle") or (http.user_agent contains "got (") or (http.user_agent contains "quic-go-HTTP") or (http.user_agent contains "Go-http-client") or (http.user_agent contains "fasthttp") or (http.user_agent contains "python") or (http.user_agent contains "java") or (http.user_agent contains "PHP") or (http.user_agent contains "Nmap") or (http.user_agent contains "scrapy" and not cf.client.bot) or (http.user_agent contains "spider" and not cf.client.bot) or (http.user_agent contains "crawl" and not cf.client.bot) or (http.user_agent contains "bot" and not http.user_agent contains "bing" and not http.user_agent contains "google" and not http.user_agent contains "yandex" and not http.user_agent contains "duckduckgo" and not http.user_agent contains "facebook" and not http.user_agent contains "linkedIn" and not http.user_agent contains "twitter" and not http.user_agent contains "yahoo" and not http.user_agent contains "vk.com" and not http.user_agent contains "MAIL_RU_BOT" and not cf.client.bot) or (cf.threat_score ge 20 and not cf.client.bot) or (http.request.method in {"PURGE" "PUT" "OPTIONS" "DELETE" "PATCH"}) or (http.x_forwarded_for contains "192.0.") or (http.x_forwarded_for contains ".0.0") or (ip.geoip.country in {"T1" "XX"} and not http.request.version in {"HTTP/2" "HTTP/3" "SPDY/3.1"} and not cf.client.bot) or (http.user_agent contains "lient" and http.user_agent contains "ttp") or (http.user_agent contains "libweb") or (http.user_agent contains "libwww") or (http.user_agent contains "wrk") or (http.user_agent contains "hey/") or (ip.geoip.asnum in {14061 60631 28438 60592 30823 4134 32505 27715 22773 131090 135905 55330 16629 4755 53363 34549 135330 47285 60798 207590 203087 198651 43289 14576 207319 201978 208425 201094 18978 52000 204601 199883 8220 36351 45011 8560 23969 45629 20207 6471 8075 45899 31400 208556 12271 7552 26496 21769 6876 45102 5617 199490 35816 131293 20860 31898 131428 8881 25429 29802 4788 3326 39284 13448 46484 174 577 29286 5056 9009 63949 212708 40788 12989 11351 11426 7029 42652 18403 54538 209 62044 3269 395003 8100 4190 12874 19740 197540 45458 136258 50837 51852 4826 195 49588 57613 34248 197099 29287 29066 30083 9534 42905 35804 45012 7303 25961 61317 5610 35320 262187 263693 20552 266706 49327 47232 32098 28429 3255 28431 14117 18734 24088 263196 41096 52228 8069 398101 28725 132196 61154 58199 6877 265537 32097 62240 3329 6830 133199 12334 270110 22884 54600 213375 206092 41009 213251 36444} and not http.request.version in {"HTTP/2" "HTTP/3" "SPDY/3.1"} and not cf.client.bot) or (http.host contains ":80") or (http.host contains ":443") or (http.cookie contains "cf_use_ob=" and not http.cookie contains "0" and not http.cookie contains "80" and not http.cookie contains "443" and not cf.client.bot) - block
+
+(cf.waf.credential_check.password_leaked) or (http.request.uri.path contains ".aspx") or (http.request.uri.path contains ".aws") or (http.request.uri.path contains ".bash") or (http.request.uri.path contains ".cache") or (http.request.uri.path contains ".credentials") or
+(http.request.uri.path contains ".docker") or
+(http.request.uri.path contains ".DS_Store") or
+(http.request.uri.path contains ".env") or
+(http.request.uri.path contains ".git") or
+(http.request.uri.path contains ".htaccess") or
+(http.request.uri.path contains ".htpasswd") or
+(http.request.uri.path contains ".idea") or
+(http.request.uri.path contains ".kube") or
+(http.request.uri.path contains ".mysql_history") or
+(http.request.uri.path contains ".npmrc") or
+(http.request.uri.path contains ".smbcredentials") or
+(http.request.uri.path contains ".sql") or
+(http.request.uri.path contains ".ssh") or
+(http.request.uri.path contains ".vs") or
+(http.request.uri.path contains "//") or
+(http.request.uri.path contains "/actuator") or
+(http.request.uri.path contains "/backup") or
+(http.request.uri.path contains "/bkp") or
+(http.request.uri.path contains "/cms") or
+(http.request.uri.path contains "/config" and not http.host contains "cdn.") or
+(http.request.uri.path contains "/credentials") or
+(http.request.uri.path contains "/debug") or
+(http.request.uri.path contains "/env") or
+(http.request.uri.path contains "/login.action") or
+(http.request.uri.path contains "/old") or
+(http.request.uri.path contains "/phpmyadmin") or
+(http.request.uri.path contains "/readme") or
+(http.request.uri.path contains "/sito") or
+(http.request.uri.path contains "/temp" and not http.host contains "cdn.") or
+(http.request.uri.path contains "/tmp" and not http.host contains "cdn.") or
+(http.request.uri.path contains "/user.action") or
+(http.request.uri.path contains "/webdav") or
+(http.request.uri.path contains "/~adm") or
+(http.request.uri.path contains "/~sysadm") or
+(http.request.uri.path contains "/~webmaster") or
+(http.request.uri.path contains "appsettings") or
+(http.request.uri.path contains "authorized_keys") or
+(http.request.uri.path contains "backup.") or
+(http.request.uri.path contains "docker-compose") or
+(http.request.uri.path contains "dump.") or
+(http.request.uri.path contains "file_put_contents") or
+(http.request.uri.path contains "id_rsa") or
+(http.request.uri.path contains "keys.json") or
+(http.request.uri.path contains "pboot:if") or
+(http.request.uri.path contains "phpinfo") or
+(http.request.uri.path contains "server.key") or
+(http.request.uri.path contains "sftp") or
+(http.request.uri.path contains "web.config") or
+(http.request.uri.path contains "wlwmanifest") or
+(http.request.uri.path contains "www-sql") or
+(http.request.uri.path contains "\\") or
+(http.request.uri.path contains "_all_dbs") or
+(http.request.uri.path contains "_debugbar") or
+(http.request.uri.path contains "~ftp") or
+(http.request.uri.path contains "~tmp") or
+(http.request.uri.path eq "/dbadmin") or
+(http.request.uri.path eq "/git") or
+(http.request.uri.path eq "/ssh") or
+(http.user_agent contains "   ") or
+(http.user_agent eq "" and not http.host contains "api." and not http.host contains "cdn." and http.host ne "blocklist.sefinek.net") or
+(lower(http.request.uri.path) contains "dockerfile") or
+(lower(http.request.uri.path) contains "etc/passwd") or
+(lower(http.request.uri.query) contains "etc/passwd") or
+(lower(http.user_agent) contains "embeddedbrowser" and not http.host contains "api." and not http.host contains "cdn.") or
+(lower(http.user_agent) contains "go-http-client" and not http.host contains "api." and not http.host contains "cdn." and http.host ne "blocklist.sefinek.net") or
+(lower(http.user_agent) contains "headless" and not http.host contains "api." and not http.host contains "cdn.") or
+(lower(http.user_agent) contains "private_keys") or
+(lower(http.user_agent) contains "secrets.json")
+(http.request.uri.path contains ".log" and not http.request.uri.path contains "ReShade.log" and not http.host contains "cdn." and http.host ne "blocklist.sefinek.net") or
+(http.request.uri.path contains ".sh") or
+(http.request.uri.path contains "auth.json") or
+(http.request.uri.path contains "crlfinjection") or
+(http.request.uri.path contains "wget+") or
+(http.request.uri.query contains "%00") or
+(http.request.uri.query contains "%0A") or
+(http.request.uri.query contains "%0D") or
+(http.request.uri.query contains "%2e%2e") or
+(http.request.uri.query contains "..%5c") or
+(http.request.uri.query contains "auto_prepend_file") or
+(http.request.uri.query contains "crlfinjection") or
+(http.request.uri.query contains "Set-Cookie:") or
+(http.request.uri.query contains "wget+") or
+(lower(http.user_agent) contains "masscan/")
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+USED BLOCK
+-----------------------
+(http.request.uri eq "https://sefinek.net/milosna-grota/verification/upload") or
+(http.request.uri.path contains ".php") or
+(http.user_agent contains "/112.0") or
+(http.user_agent contains "/113.0") or
+(http.user_agent contains "/114.0" and not http.user_agent contains "OPR/114.0") or
+(http.user_agent contains "/118.0") or
+(http.user_agent contains "Chrome/74" and not http.user_agent contains "Better Uptime Bot" and not http.host contains "api.") or
+(http.user_agent contains "Windows NT 5" and not http.user_agent contains "(via ggpht.com GoogleImageProxy)" and not http.host contains "api.") or
+(lower(http.user_agent) contains "android 8" and not http.host contains "api.") or
+(lower(http.user_agent) contains "archive.org_bot") or
+(lower(http.user_agent) contains "chrome/100") or
+(lower(http.user_agent) contains "chrome/103") or
+(lower(http.user_agent) contains "chrome/17") or
+(lower(http.user_agent) contains "chrome/30") or
+(lower(http.user_agent) contains "chrome/31") or
+(lower(http.user_agent) contains "chrome/32") or
+(lower(http.user_agent) contains "chrome/33") or
+(lower(http.user_agent) contains "chrome/34") or
+(lower(http.user_agent) contains "chrome/35") or
+(lower(http.user_agent) contains "chrome/36") or
+(lower(http.user_agent) contains "chrome/37") or
+(lower(http.user_agent) contains "chrome/38") or
+(lower(http.user_agent) contains "chrome/39") or
+(lower(http.user_agent) contains "chrome/41") or
+(lower(http.user_agent) contains "chrome/42") or
+(lower(http.user_agent) contains "chrome/44") or
+(lower(http.user_agent) contains "chrome/48") or
+(lower(http.user_agent) contains "chrome/49") or
+(lower(http.user_agent) contains "chrome/52") or
+(lower(http.user_agent) contains "chrome/53") or
+(lower(http.user_agent) contains "chrome/58") or
+(lower(http.user_agent) contains "chrome/60") or
+(lower(http.user_agent) contains "chrome/64") or
+(lower(http.user_agent) contains "chrome/65") or
+(lower(http.user_agent) contains "chrome/67") or
+(lower(http.user_agent) contains "chrome/68") or
+(lower(http.user_agent) contains "chrome/69") or
+(lower(http.user_agent) contains "chrome/71") or
+(lower(http.user_agent) contains "chrome/77") or
+(lower(http.user_agent) contains "chrome/78") or
+(lower(http.user_agent) contains "chrome/79") or
+(lower(http.user_agent) contains "chrome/80") or
+(lower(http.user_agent) contains "chrome/81") or
+(lower(http.user_agent) contains "chrome/83") or
+(lower(http.user_agent) contains "chrome/84") or
+(lower(http.user_agent) contains "chrome/85") or
+(lower(http.user_agent) contains "chrome/87") or
+(lower(http.user_agent) contains "chrome/88") or
+(lower(http.user_agent) contains "chrome/89") or
+(lower(http.user_agent) contains "chrome/91") or
+(lower(http.user_agent) contains "chrome/92") or
+(lower(http.user_agent) contains "chrome/93") or
+(lower(http.user_agent) contains "chrome/94") or
+(lower(http.user_agent) contains "chrome/95") or
+(lower(http.user_agent) contains "chrome/96") or
+(lower(http.user_agent) contains "chrome/98") or
+(lower(http.user_agent) contains "crios/121") or
+(lower(http.user_agent) contains "firefox/45") or
+(lower(http.user_agent) contains "firefox/52") or
+(lower(http.user_agent) contains "firefox/57") or
+(lower(http.user_agent) contains "firefox/62") or
+(lower(http.user_agent) contains "firefox/76") or
+(lower(http.user_agent) contains "firefox/77") or
+(lower(http.user_agent) contains "firefox/79") or
+(lower(http.user_agent) contains "firefox/83") or
+(lower(http.user_agent) contains "firefox/84") or
+(lower(http.user_agent) contains "html5plus") or
+(lower(http.user_agent) contains "mac os x 10_15" and not http.host contains "api.") or
+(lower(http.user_agent) contains "mac os x 10_9") or
+(lower(http.user_agent) contains "mac os x 12_5") or
+(lower(http.user_agent) contains "msie 9.0") or
+(lower(http.user_agent) contains "netfront") or
+(lower(http.user_agent) contains "symbianos")
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Managed challenge
+---------------------------------
+(http.request.uri.query contains ")/*") or (http.request.uri.query contains ")--") or (http.request.uri.query contains "benchmark(") or (http.request.uri.query contains "'0:0:20'") or (http.request.uri.query contains "MD5(") or (http.request.uri.query contains "%20waitfor%20delay%20") or (http.request.uri.query contains "%22") or (http.request.uri.query contains "%20/*") or (http.request.uri.query contains "%20--") or (http.request.uri.query contains "%20%23") or (http.request.uri.query contains ")%23") or (http.request.uri.query contains "script>") or (http.request.uri.query contains "%40") or (http.request.uri.query contains "%00") or (http.request.uri.query contains "<?php") or (http.request.uri.query contains "0x00") or (http.request.uri.query contains "0x08") or (http.request.uri.query contains "0x09") or (http.request.uri.query contains "0x0a") or (http.request.uri.query contains "0x0d") or (http.request.uri.query contains "0x1a") or (http.request.uri.query contains "0x22") or (http.request.uri.query contains "0x25") or (http.request.uri.query contains "0x27") or (http.request.uri.query contains "0x5c") or (http.request.uri.query contains "0x5f") or (http.request.uri.query contains "SELECT") or (http.request.uri.query contains "concat") or (http.request.uri.query contains "union") or (http.request.uri.query contains "0x50") or (http.request.uri.query contains "DROP") or (http.request.uri.query contains "WHERE") or (http.request.uri.query contains "ONION") or (http.request.uri.query contains "0x3c62723e3c62723e3c62723e") or (http.request.uri.query contains "0x3c696d67207372633d22") or (http.request.uri.query contains "OR") or (http.request.uri.query contains "0x3e") or (http.request.uri.query contains "<img") or (http.request.uri.query contains "<image") or (http.request.uri.query contains "document.cookie") or (http.request.uri.query contains "onerror()") or (http.request.uri.query contains "alert(") or (http.request.uri.query contains "window.") or (http.request.uri.query contains "String.fromCharCode(") or (http.request.uri.query contains "javascript:") or (http.request.uri.query contains "onmouseover=") or (http.request.uri.query contains "<BODY onload") or (http.request.uri.query contains "<style") or (http.request.uri.query contains "svg onload") or (http.request.uri.path contains "/manual") or (http.request.uri.path contains "/content") or (http.request.uri.path eq "/images") or (http.user_agent contains "cms") or (http.user_agent contains "detector") or (http.request.uri.path contains "01") or (http.request.uri.path contains "+") or (http.request.uri.path contains "*") or (http.request.uri.path eq "/tables") or (http.request.uri.path contains "(") or (http.request.uri.path contains "concat") or (http.request.uri.path contains "@") or (http.request.uri.path contains "CONCAT") or (http.request.uri.path contains "!") or (http.request.uri.path contains ")") or (http.request.uri.path contains ",") or (http.request.uri.path eq "MOD") or (http.request.uri.path contains "AND") or (http.request.uri.path contains "_") or (http.cookie contains "bns=") or (http.user_agent contains "[object]") or (http.user_agent contains "Spider") or (http.user_agent contains "Baidu") or (ip.geoip.asnum eq 397630) or (http.user_agent eq "Chrome/56") or (http.user_agent contains "Chrome/51") or (http.user_agent contains "Chrome/55") or (http.user_agent contains "Chrome/54") or (ip.geoip.asnum eq 27813) or (ip.geoip.asnum eq 328218) or (ip.geoip.asnum eq 41508) or (http.user_agent contains "Dalvik") or (http.user_agent contains "DMAbaMP3-57") or (http.user_agent contains "THEWORLD") or (http.user_agent contains "YaApp") or (http.request.uri.path eq "//") or (http.request.uri.path eq "///") or (http.request.uri.path eq "////") - block
+(ip.geoip.continent in {"T1" "XX"}) or (ip.geoip.country in {"T1"}) or (http.host contains ":") or (ip.geoip.asnum eq 8075) or (http.request.uri contains "#") or (http.request.uri contains "$") or (http.request.uri contains "%") or (http.request.uri contains "@") or (http.request.uri eq "~") or (cf.threat_score ge 5) or (http.request.version eq "HTTP/1.2") or (ip.geoip.asnum eq 17054) or (ip.geoip.asnum eq 577) or (http.user_agent contains "Slik") or (http.user_agent eq "") or (http.user_agent eq " ") or (http.user_agent eq "-") or (http.user_agent eq "'") or (http.user_agent contains "ALittle") or (http.user_agent contains ".NET") or (http.x_forwarded_for contains "192.0.") or (http.x_forwarded_for contains ".0.0") or (http.user_agent contains "NT 6.2") or (http.user_agent contains "NT 6.3") or (http.user_agent contains "NT 5.1") or (ip.geoip.asnum eq 211720) or (ip.geoip.asnum eq 271633) or (ip.geoip.asnum eq 266542) or (ip.geoip.asnum eq 45317) or (ip.geoip.asnum eq 64267) or (ip.geoip.asnum eq 6939) or (ip.geoip.asnum eq 54252) or (http.user_agent contains "LM-Q") or (not http.user_agent contains "Mozilla/5.0") or (ip.geoip.asnum eq 24961 and http.request.version ne "HTTP/3") - block ВАЖНО: ЕСЛИ САЙТ НА HTTP3
+
+(http.request.method eq "PUT") or (http.user_agent eq "M") or (http.host eq "m") or (http.request.version eq "HTTP/1.0") or (http.request.method eq "PATCH") or (http.request.method eq "DELETE") or (http.request.method eq "PURGE") or (ip.geoip.country eq "GQ") or (ip.geoip.country eq "IO") or (ip.geoip.country eq "HN") or (ip.src in {35.0.0.0/8 34.0.0.0/8}) or (http.user_agent eq "109e15941c57") or (http.user_agent eq "d1b2df322c91") or (http.request.uri.query eq "--+") or (http.user_agent eq "84bd2cfee733") or (http.request.uri.query eq "d=1") or (http.user_agent contains "Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)") or (http.request.uri.query eq "daksldlkdsadas=1") or (http.user_agent eq "stresser") or (ip.geoip.asnum eq 266328) or (ip.geoip.asnum eq 198093) or (ip.geoip.asnum eq 26496) or (ip.geoip.asnum eq 22773) or (ip.geoip.asnum eq 36352) or (ip.geoip.asnum eq 13415) or (ip.geoip.asnum eq 9919) or (ip.geoip.country eq "BD") or (ip.geoip.asnum eq 8251) or (ip.geoip.asnum eq 33932) or (ip.geoip.asnum eq 43350) or (ip.geoip.asnum eq 63961) or (ip.geoip.asnum eq 39351) or (ip.geoip.asnum eq 41653) or (ip.geoip.asnum eq 4134) or (ip.geoip.asnum eq 63949) or (ip.geoip.asnum eq 57935) or (ip.geoip.asnum eq 174) or (ip.geoip.asnum eq 20093) or (ip.geoip.asnum eq 46562) or (ip.geoip.asnum eq 14061) or (ip.geoip.asnum eq 21501) or (ip.geoip.asnum eq 6181) or (ip.geoip.asnum eq 26548) or (ip.geoip.asnum eq 43624) or (ip.geoip.asnum eq 35830) or (ip.geoip.asnum eq 52000) or (ip.geoip.asnum eq 35624) or (ip.geoip.asnum eq 26548) or (http.user_agent eq "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36") or (http.user_agent contains "PhantomJS") or (http.user_agent contains "scan") or (http.user_agent contains "Unknown") or (http.user_agent eq "Mozilla/5.0 (Linux; U; Android 10; pl-pl; Mi MIX 2S Build/QKQ1.190828.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/89.0.4389.116 Mobile Safari/537.36 XiaoMi/MiuiBrowser/13.10.0-gn") or (ip.geoip.asnum eq 4755) or (ip.geoip.asnum eq 4808) or (ip.geoip.asnum eq 9441) or (ip.geoip.asnum eq 21353) or (ip.geoip.asnum eq 9317) or (ip.geoip.asnum eq 4808) or (ip.geoip.asnum eq 8193) or (ip.geoip.asnum eq 264702) or (ip.geoip.asnum eq 39927) or (ip.geoip.asnum eq 3549) or (ip.geoip.asnum eq 4134) or (ip.geoip.asnum eq 35104) or (ip.geoip.asnum eq 4766) or (http.user_agent eq "Opera/9.80 (Android; Opera Mini/7.5.54678/28.2555; U; ru) Presto/2.10.289 Version/12.02") or (http.user_agent contains "Presto") or (ip.geoip.asnum eq 206119) or (ip.geoip.asnum eq 33765) or (ip.geoip.country eq "TZ") or (http.user_agent contains ".NET") or (ip.geoip.asnum eq 3786) or (ip.geoip.asnum eq 24961) or (ip.geoip.asnum eq 43226) or (ip.geoip.asnum eq 45542) or (ip.geoip.asnum eq 1239) or (ip.geoip.asnum eq 206446) or (ip.geoip.asnum eq 36351) or (http.user_agent contains "Head") or (ip.geoip.asnum eq 396982) or (ip.geoip.asnum eq 6079) or (http.user_agent contains "CrOS") or (ip.geoip.country eq "OM") or (ip.geoip.country eq "JE") or (http.user_agent contains "MSIE") or (http.user_agent contains "Firefox/45") or (http.user_agent contains "Firefox/47") or (http.user_agent contains "Firefox/48") or (http.user_agent contains "Chrome/52") or (ip.geoip.asnum eq 8048) or (ip.geoip.asnum eq 45317) or (ip.geoip.asnum eq 5408) or (ip.geoip.asnum eq 55286) or (ip.geoip.asnum eq 8151) or (http.user_agent contains "NT 6") or (http.user_agent contains "YandexImages") - Managed Challenge
+(ip.geoip.asnum eq 4847) or (ip.geoip.asnum eq 35745) or (http.user_agent contains "PLAYSTATION") or (http.user_agent contains "; 1.0") or (http.user_agent contains "7.1.2") or (http.user_agent contains "SM-G532MT") or (ip.geoip.asnum eq 37284) or (ip.geoip.asnum eq 17762) or (ip.geoip.asnum eq 264771) or (ip.geoip.asnum eq 17451) or (ip.geoip.asnum eq 16735) or (ip.geoip.asnum eq 29182) or (ip.geoip.asnum eq 142321) or (ip.geoip.asnum eq 8167) or (ip.geoip.asnum eq 38320) or (ip.geoip.asnum eq 55685) or (ip.geoip.country eq "TL") or (ip.geoip.asnum eq 7516) or (ip.geoip.asnum eq 8585) or (ip.geoip.asnum eq 44217) or (ip.geoip.asnum eq 272011) or (ip.geoip.asnum eq 138089) or (ip.geoip.asnum eq 207633) or (ip.geoip.asnum eq 21887) or (ip.geoip.asnum eq 3741) or (ip.geoip.asnum eq 61345) or (ip.geoip.country eq "CY") or (ip.geoip.asnum eq 147141) or (ip.geoip.asnum eq 263946) or (ip.geoip.asnum eq 11664) or (ip.geoip.asnum eq 58495) or (http.user_agent contains "CrOS") or (ip.geoip.asnum eq 139982) or (http.user_agent contains "VivoBrowser/5.5.2.1") or (http.user_agent contains "SeaMonkey") or (ip.geoip.asnum eq 27882) or (http.user_agent contains "Android 7.1.2") or (http.user_agent contains "Waterfox") or (ip.geoip.asnum eq 24207) or (ip.geoip.asnum eq 265401) or (ip.geoip.asnum eq 53062) or (ip.geoip.country eq "XX") or (ip.geoip.country eq "PS") or (ip.geoip.asnum eq 264161) or (ip.geoip.asnum eq 142369) or (ip.geoip.asnum eq 58485) or (ip.geoip.asnum eq 18747) or (ip.geoip.asnum eq 133774) or (ip.geoip.asnum eq 265579) or (ip.geoip.asnum eq 271935) or (ip.geoip.asnum eq 50115) or (ip.geoip.asnum eq 43936) or (ip.geoip.asnum eq 201200) or (ip.geoip.asnum eq 4837) or (http.user_agent contains "NT 5.1") or (http.user_agent contains "NT 6.1") or (http.request.method eq "POST" and http.request.version ne "HTTP/3" and http.request.version ne "HTTP/1.1" and http.request.version ne "HTTP/2") or (ip.geoip.asnum eq 35048) or (http.user_agent contains "arm7tdmi") or (http.user_agent contains "Minimo") or (http.request.full_uri contains "?") or (http.user_agent contains "Chrome/9" and not cf.client.bot) or (http.user_agent contains "QQBrowser") or (http.user_agent contains "Core") or (http.user_agent contains "Firefox/2") or (http.user_agent contains "Firefox/3") or (http.user_agent contains "Firefox/4") or (http.user_agent contains "Firefox/5") or (http.user_agent contains "Firefox/6") or (http.user_agent contains "Firefox/7") or (http.user_agent contains "Firefox/8") or (http.user_agent contains "Chromium/4") or (http.user_agent contains "Chromium/2") or (http.user_agent contains "Chromium/3") or (http.user_agent contains "Chromium/5") or (http.user_agent contains "Chromium/6") or (http.user_agent contains "Chromium/7") or (http.user_agent contains "Chromium/8") - Managed Challenge
+
+(http.request.uri.path contains "/login/") or (http.request.uri.path contains "/wp-login.php") or (http.request.uri.path contains "/signin") and (cf.throttle.request.rps > 10) - captcha + js challenge
+
+(http.request.uri.path contains "/login/") or (http.request.uri.path contains "/wp-login.php") or (http.request.uri.path contains "/signin") and (cf.throttle.request.rps > 200) - block
+
+(http.request.uri.path contains "/api/") and (cf.throttle.request.rps > 70) - captcha + js
+
+(cf.threat_score > 90) - block
+
+(cf.threat_score >= 40 and cf.threat_score <= 50) - captcha + js challenge
+
+ЕСЛИ ИДЕТ АТАКА!!!!!!!!!!!!!!!!!!!!!!------------------------------------------------
+
+(ip.geoip.country ne "RU" and ip.geoip.country ne "BY" and ip.geoip.country ne "KZ") - block (only ddos)
+
+(cf.threat_score eq 3 and cf.threat_score gt 3) - Managed Challenge (only DDOS)
+(http.request.uri.path contains "/") and (cf.throttle.request.rps > 5) - Managed Challenge (only ddos)
+(http.request.uri.path contains "/api/") and (cf.throttle.request.rps > 5) - Managed Challenge (only ddos)
+(http.request.uri.path contains "/login/") and (cf.throttle.request.rps > 5) - Managed Challenge (only ddos)
+(http.request.uri.path contains "/") and (cf.throttle.request.rps > 32) - BLOCK (only ddos)
+
+
+ЕСЛИ ИДЕТ АТАКА!!!!!!!!!!!!!!!!!!!!!!------------------------------------------------
+
+(ip.geoip.asnum in {14061 60631 28438 60592 30823 4134 32505 27715 22773 30823 131090 135905 55330 16629 4755 53363 34549 135330 47285 60798 207590 203087 198651 43289 14576 207319 201978 208425 201094 18978 52000 204601 199883 8220 36351 45011 8560 23969 45629 20207 6471 8075 45899 31400 208556 12271 7552 26496 21769 6876 45102 5617 199490 35816 131293 20860 31898 131428 8881 25429 29802 4788 3326 39284 13448 46484 174 577 29286 5056 9009 63949 212708 40788 12989 11351 11426 7029 42652 18403 54538 209 62044 3269 395003 8100 4190 12874 19740 197540 45458 136258 50837 51852 4826 195 49588 57613 34248 197099 29287 29066 30083 9534 42905 35804 45012 7303 25961 61317 5610 35320 262187 263693 20552 266706 49327 47232 32098 28429 3255 28431 14117 18734 24088 263196 41096 52228 8069 398101 28725 132196 61154 58199 6877 265537 32097 62240 3329 3329 3329 6830 133199 12334 270110 22884 54600 213375 206092 41009 213251 36444}) - bad ASN (в том числе и популярные)
+
+
+(cf.threat_score gt 24) or 
+(not http.request.version in {"HTTP/1.0" "HTTP/1.1" "HTTP/1.2" "HTTP/2" "HTTP/3" "SPDY/3.1"}) or
+(http.request.uri.path contains "/phpunit") or 
+(http.request.uri contains "<?php") or 
+(http.cookie contains "<?php") or 
+(http.request.full_uri contains "passwd") or 
+(http.request.uri contains "/dfs/") or 
+(http.request.uri contains "/autodiscover/") or 
+(http.request.uri contains "/wpad.") or 
+(http.request.uri contains "wallet.dat") or 
+(http.request.uri contains "/.env") or
+(http.request.uri contains "../") or
+(http.request.full_uri contains "webconfig.txt") or 
+(http.request.full_uri contains "vuln.") or 
+(http.request.uri contains ".sql") or 
+(http.request.uri contains ".bak") or 
+(http.request.uri contains ".cfg") or 
+(http.request.uri contains ".env") or 
+(http.request.uri contains ".ini") or 
+(http.request.uri contains ".log") or 
+(raw.http.request.uri.query contains "?%00") or 
+(http.request.uri.query contains "eval(") or 
+(http.request.uri.query contains "base64") or 
+(http.request.uri.query contains "var_dump") or 
+(http.request.uri.query contains "<script") or 
+(http.request.uri.query contains "%3Cscript") or 
+(http.cookie contains "<script") or 
+(http.referer contains "<script") or 
+(upper(http.request.uri.query) contains " UNION ALL ") or 
+(upper(http.request.uri.query)contains " SELECT ") or 
+(raw.http.request.uri contains "../") or 
+(raw.http.request.uri contains "..%2F") or
+(http.request.uri.path contains ".js.map") or
+(http.request.uri.query contains "$_GLOBALS[") or 
+(http.request.uri.query contains "$_REQUEST[") or 
+(http.request.uri.query contains "$_POST[")
+- block
+
+(lower(http.user_agent) contains "?%00") or 
+(lower(http.user_agent) contains "$[") or 
+(lower(http.user_agent) contains "${") or 
+(lower(http.user_agent) contains "absinthe") or 
+(lower(http.user_agent) contains "appinsights") or
+(lower(http.user_agent) contains "mj12bot") or
+(lower(http.user_agent) contains "semrushbot") or 
+(lower(http.user_agent) contains "dotbot") or 
+(lower(http.user_agent) contains "whatcms") or 
+(lower(http.user_agent) contains "rogerbot") or 
+(lower(http.user_agent) contains "trendictionbot") or 
+(lower(http.user_agent) contains "blexbot") or 
+(lower(http.user_agent) contains "linkfluence") or 
+(lower(http.user_agent) contains "magpie-crawler") or 
+(lower(http.user_agent) contains "mediatoolkitbot") or 
+(lower(http.user_agent) contains "aspiegelbot") or 
+(lower(http.user_agent) contains "domainstatsbot") or 
+(lower(http.user_agent) contains "coccocbot") or 
+(lower(http.user_agent) contains "commix") or 
+(lower(http.user_agent) contains "crimscanner") or 
+(lower(http.user_agent) contains "davclnt") or 
+(lower(http.user_agent) contains "datacha0s") or 
+(lower(http.user_agent) contains "dirbuster") or 
+(lower(http.user_agent) contains "cincraw") or 
+(lower(http.user_agent) contains "nimbostratus") or 
+(lower(http.user_agent) contains "httrack") or 
+(lower(http.user_agent) contains "serpstatbot") or 
+(lower(http.user_agent) contains "omgili") or 
+(lower(http.user_agent) contains "grapeshotcrawler") or 
+(lower(http.user_agent) contains "megaindex") or 
+(lower(http.user_agent) contains "petalbot") or 
+(lower(http.user_agent) contains "semanticbot") or 
+(lower(http.user_agent) contains "cocolyzebot") or 
+(lower(http.user_agent) contains "domcopbot") or 
+(lower(http.user_agent) contains "traackr") or 
+(lower(http.user_agent) contains "bomborabot") or 
+(lower(http.user_agent) contains "linguee") or 
+(lower(http.user_agent) contains "webtechbot") or 
+(lower(http.user_agent) contains "domainstatsbot") or 
+(lower(http.user_agent) contains "clickagy") or 
+(lower(http.user_agent) contains "sqlmap") or 
+(lower(http.user_agent) contains "internet-structure-research-project-bot") or 
+(lower(http.user_agent) contains "seekport") or 
+(lower(http.user_agent) contains "awariosmartbot") or 
+(lower(http.user_agent) contains "onalyticabot") or 
+(lower(http.user_agent) contains "buck") or 
+(lower(http.user_agent) contains "riddler") or 
+(lower(http.user_agent) contains "sbl-bot") or 
+(lower(http.user_agent) contains "df bot 1.0") or 
+(lower(http.user_agent) contains "pubmatic crawler bot") or 
+(lower(http.user_agent) contains "restsharp") or 
+(lower(http.user_agent) contains "bvbot") or 
+(lower(http.user_agent) contains "sogou") or 
+(lower(http.user_agent) contains "barkrowler") or 
+(lower(http.user_agent) contains "admantx") or 
+(lower(http.user_agent) contains "adbeat") or 
+(lower(http.user_agent) contains "embed.ly") or 
+(lower(http.user_agent) contains "semantic-visions") or 
+(lower(http.user_agent) contains "voluumdsp") or 
+(lower(http.user_agent) contains "wc-test-dev-bot") or 
+(lower(http.user_agent) contains "gulperbot") or
+(lower(http.user_agent) contains "360Spider") or
+(lower(http.user_agent) contains "/bin/bash") or 
+(lower(http.user_agent) contains "crawler.feedback@gmail.com") or 
+(lower(http.user_agent) contains "eval(") or 
+(lower(http.user_agent) contains "env:") or 
+(lower(http.user_agent) contains "fhscan") or 
+(lower(http.user_agent) contains "floodgate") or 
+(lower(http.user_agent) contains "go-http-client/") or 
+(lower(http.user_agent) contains "nikto") or  
+(lower(http.user_agent) contains "python") or
+(lower(http.user_agent) contains "masscan") or 
+(lower(http.user_agent) contains "mail.ru") or 
+(lower(http.user_agent) contains "scrapy") or 
+(lower(http.user_agent) contains "webdav-miniredir") or 
+(lower(http.user_agent) contains "winhttp.winhttprequest") or 
+(lower(http.user_agent) contains "zmeu") or
+(lower(http.user_agent) contains "fuzz") or 
+(lower(http.user_agent) contains "wp_is_mobile") or 
+(lower(http.user_agent) contains "sqlninja") or 
+(lower(http.user_agent) contains "yaanibot")
+- block
+
+(http.user_agent contains "Acunetix") or
+(lower(http.user_agent) contains "apache") or
+(http.user_agent contains "BackDoorBot") or
+(http.user_agent contains "cobion") or
+(http.user_agent contains "masscan") or 
+(http.user_agent contains "FHscan") or 
+(http.user_agent contains "scanbot") or 
+(http.user_agent contains "Gscan") or 
+(http.user_agent contains "Researchscan") or 
+(http.user_agent contains "WPScan") or 
+(http.user_agent contains "ScanAlert") or 
+(http.user_agent contains "Wprecon") or
+(lower(http.user_agent) contains "virusdie") or
+(http.user_agent contains "VoidEYE") or
+(http.user_agent contains "WebShag") or
+(http.user_agent contains "Zeus") or
+(http.user_agent contains "zgrab") or
+(lower(http.user_agent) contains "zmap") or 
+(lower(http.user_agent) contains "nmap") or 
+(lower(http.user_agent) contains "fimap") or
+(http.user_agent contains "ZmEu") or
+(http.user_agent contains "ZumBot") or
+(http.user_agent contains "Zyborg") 
+- block
+
+
+
+
+
+
+
